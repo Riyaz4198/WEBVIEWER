@@ -1,0 +1,125 @@
+
+
+<form class = 'card p-2 bg-light'>
+<div class="container-fluid" style="border:4px solid #cecece;" >
+ 
+  
+  <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png" alt="logo">
+    <h3>Settings</h3>
+  </div>
+  
+    
+     
+  <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+  
+    <div class="card-header">
+      <div class="title">
+        <h5><u>Device information</u></h5>
+      </div>
+    </div>
+
+      
+          
+  
+  <!--- Operating Number --->
+  
+  
+    <div class="container">
+      
+<div class="container-small">
+ <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+<input type="text" readonly class="form-control-plaintext" [value]="fuse?.OPERATINGNUMBER"
+  id = 'OPERATINGNUMBER' ngModel>  
+    </div>
+    <div class="container-small">
+  <label for="DIVISION" class="col-sm-2 col-form-label">Division: </label>
+<input type="text" readonly class="form-control-plaintext" [value]="fuse?.DIVISION"
+  id = 'DIVISION' ngModel> 
+</div>
+<div class="container-small">
+  <label for="FEEDERNAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+<input type="text" readonly class="form-control-plaintext" [value]="fuse?.FEEDERNAME"
+  id = 'FEEDERNAME' ngModel> 
+  </div>
+  <div class="container-small">
+  <label for="LOCATION" class="col-sm-2 col-form-label">Location: </label>
+<input type="text" style= "width:895px;" readonly class="form-control-plaintext" [value]="fuse?.LOCATION"
+  id = 'LOCATION' ngModel> 
+  <br>
+  </div>
+  <div class="container-small">
+  <label for="DEVICE_TYPE" class="col-sm-2 col-form-label">Device Type: </label>
+<input type="text" readonly class="form-control-plaintext" [value]="fuse?.DEVICE_TYPE"
+  id = 'DEVICE_TYPE' ngModel> 
+  </div>
+  <div class="container-small">
+  <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+<input type="text" readonly class="form-control-plaintext" [value]="fuse?.SCADA"
+  id = 'SCADA' ngModel> 
+</div></div>
+<br>
+<div>
+  <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+  <div class="container-xl" style="border: 1px solid grey;background:white;margin-right:-35px;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+  <textarea readonly class="form-control-plaintext" [value]="fuse?.ENGINEERING_COMMENTS"
+  id = 'ENGINEERING_COMMENTS' ngModel> 
+  </textarea>
+
+</div>
+<br>
+<br>
+<br>
+
+  <label for="BYPASS_PLAN" class="col-sm-2 control-label">Bypass Plan: </label>
+  
+
+  <div class="container-xl" style="border: 1px solid grey; background:white;margin-bottom: -25px; width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+  <textarea readonly class="form-control-plaintext" [value]="fuse?.BYPASS_PLANS"
+  id = 'BYPASS_PLAN' ngModel> 
+  <br>
+  <br>
+</textarea>
+ </div>
+
+<br>
+<br>
+</div>
+</div>
+
+
+
+
+<div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+    <div class="title">
+      <h5><u>Settings information</u></h5>
+    </div>
+  
+ 
+    
+  
+<div class="container">
+  <div class="container-small">
+  <label for="FS_FUSE_TYPE" class="col-sm-2 col-form-label">Fuse Type: </label>
+<input type="text" readonly class="form-control-plaintext" [value]="fuse?.FS_FUSE_TYPE"
+  id = 'FS_FUSE_TYPE' ngModel> 
+</div>
+<div class="container-small">
+  <label for="FS_FUSE_RATING" class="col-sm-2 col-form-label">Fuse Rating: </label>
+  <input type="text" readonly class="form-control-plaintext" [value]="fuse?.FS_FUSE_RATING"
+    id = 'FS_FUSE_RATING' ngModel> 
+  </div>
+<div class="container-small">
+    <label for="FS_LEVER_UP_PROT_MODE" class="col-sm-2 control-label">Lever Up Prot. Mode: </label>
+<input type="text"  readonly class="form-control-plaintext"  [value]="fuse?.FS_LEVER_UP_PROT_MODE"
+  id = 'FS_LEVER_UP_PROT_MODE' ngModel> 
+</div>
+</div>
+</div>
+</div>
+</form>
+
+  
+
+ 

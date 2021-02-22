@@ -1,0 +1,143 @@
+
+
+<form class = 'card p-2 bg-light'>
+  <div class="container-fluid" style="border:4px solid #cecece;" >
+   
+    
+    <div class="header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png" alt="logo">
+      <h3>Settings</h3>
+    </div>
+    
+      <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+      
+        <div class="card-header">
+          <div class="title">
+            <h5><u>Device information</u></h5>
+          </div>
+        </div>
+  <!--- Operating Number --->
+  <form class="form-inline">
+      <div id="wrapper">
+          <div class="container-small">
+                      <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.OPERATINGNUMBER"
+                          id='OPERATINGNUMBER' ngModel>
+                  </div>
+                  <div class="container-small">
+                      <label for="DIVISION" class="col-sm-2 col-form-label">Division: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.DIVISION" id='DIVISION'
+                          ngModel>
+                          </div>
+                          <div class="container-small">
+                      <label for="FEEDERNAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.FEEDERNAME"
+                          id='FEEDERNAME' ngModel>
+                          </div>
+                          <div class="container-small">
+                      <label for="LOCATION" class="col-sm-2 col-form-label">Location: </label>
+                      <input type="text" style="width: 47.5%;" readonly class="form-control-plaintext" [value]="sec?.LOCATION" id='LOCATION'
+                          ngModel>
+                        </div>
+                        <div class="container-small">
+                      <label for="CCRATING" class="col-sm-2 col-form-label">CC Rating: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.CCRATING" id='CCRATING'
+                          ngModel>
+                        </div>
+                      
+                      <div class="container-small">
+                      <label for="DEVICE_TYPE" class="col-sm-2 col-form-label">Device Type: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.DEVICE_TYPE"
+                          id='DEVICE_TYPE' ngModel>
+                          </div>
+                   
+                      <div class="container-small">
+                      <label for="SECTIONALIZER_TYPE" class="col-sm-2 col-form-label">Sectionalizer Type: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.CONTROL_TYPE"
+                          id='SECTIONALIZER_TYPE' ngModel>
+                          </div>
+                   
+                      <div class="container-small">
+                      <label for="FLISR" class="col-sm-2 col-form-label">FLISR Device: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.FLISR" id='FLISR'
+                          ngModel>
+                          </div>
+                          <div class="container-small">
+                      <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.SCADA" id='SCADA'
+                          ngModel>
+                          </div>
+                      <br>
+                      <div class="container-small">
+                      <label for="SUMMER_LOAD_LIMIT" class="col-sm-2 col-form-label">Summer Load Limit(amps): </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.SUMMER_LOAD_LIMIT"
+                          id='SUMMER_LOAD_LIMIT' ngModel>
+                          </div>
+                      <br>
+                      <div class="container-small">
+                      <label for="WINTER_LOAD_LIMIT" class="col-sm-2 col-form-label">Winter Load Limit(amps): </label>
+                      <input type="text" readonly class="form-control-plaintext" [value]="sec?.WINTER_LOAD_LIMIT"
+                          id='WINTER_LOAD_LIMIT' ngModel>
+                          </div>
+                      <br>
+                      
+                   
+                        <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+                        <div class="container-xl" style="border: 1px solid grey;background-color: white;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+                        <textarea readonly class="form-control-plaintext" [value]="sec?.ENGINEERING_COMMENTS"
+                        id = 'ENGINEERING_COMMENTS' ngModel> 
+                       
+                        </textarea>
+                    
+                    
+                  
+         
+            
+                      </div>
+                      <br>
+                      <br>
+          </div>
+          
+          </form>
+        </div>
+      
+               
+                     
+                      
+                      <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+                        <div class="card-header">
+                            <div class="title">
+                              <h5><u>Settings information</u></h5>
+                            </div>
+                          </div>
+<div class="container-small">
+                          <label for="MINIMUM_ACTUATINGPHASE_CURRENT" class="col-sm-8 col-form-label">Minimum
+                              Actuating Current,A (Phase): </label>
+                          <input type="text" readonly class="form-control-plaintext"
+                              [value]="sec?.PHA_MIN_TO_COUNT" id='MINIMUM_ACTUATINGPHASE_CURRENT'
+                              ngModel>
+                            </div>
+                            <div class="container-small">   
+                          <label for="MINIMUM_ACTUATINGGROUND_CURRENT" class="col-sm-8 col-form-label">Minimum
+                              Actuating Current,A(Ground): </label>
+                          <input type="text" readonly class="form-control-plaintext"
+                              [value]="sec?.GRD_MIN_TO_COUNT" id='MINIMUM_ACTUATINGGROUND_CURRENT'
+                              ngModel>
+                              </div>
+                              <div class="container-small">
+                          <label for="RESET_TIME" class="col-sm-8 control-label">Reset Time,s:
+                          </label>
+                          <input type="text" readonly class="form-control-plaintext" [value]="sec?.RESET_TIME"
+                              id='RESET_TIME' ngModel>
+                 </div>
+                <div class="container-small">
+                          <label for="COUNTS_TO_LOCKOUT" class="col-sm-8 col-form-label">Count to lockout: </label>
+                          <input type="text" readonly class="form-control-plaintext" [value]="sec?.COUNTS_TO_LOCKOUT"
+                              id='COUNTS_TO_LOCKOUT' ngModel>
+                            </div>
+                      
+                          </div>
+                       <br>
+                       <br>
+                        </div>
+          

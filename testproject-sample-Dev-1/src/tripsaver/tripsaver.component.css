@@ -1,0 +1,210 @@
+.header {
+  padding: 1px;
+  text-align: center;
+  background:gray;
+  color: white;
+  height:35px;
+  width:auto;
+  
+}
+.header img {
+  float: left;
+  width: 60px;
+  height: 33px;
+  background: grey;
+}
+
+.header h3 {
+  position: relative;
+ 
+  padding-right:62px; 
+ 
+}
+html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+input[type=text], select {
+  width: 15%;
+  padding: 2px 5px;
+  background-color: white;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 1px;
+  box-sizing: border-box;
+  -webkit-flex: 3;
+-ms-flex: 3;
+flex: 3;
+
+}
+input[type="text1"],select{
+  width: 35%;
+  padding: 50px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-sizing: border-box;
+  -webkit-flex: 3;
+-ms-flex: 3;
+flex: 3;
+background-color: #f1f1f1;
+padding: 10px;
+
+
+}
+input[type="text2"],select{
+  width: 8%;
+  padding: 50px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-sizing: border-box;
+  -webkit-flex: 3;
+-ms-flex: 3;
+flex: 3;
+background-color: #f1f1f1;
+padding: 10px;
+
+}
+.title{
+  padding: 5px;
+  text-align: center;
+  color: grey;
+  font-size: 10px;
+}
+
+
+label {
+color: grey;
+font-weight: bold;
+display: inline-block;
+width: 200px;
+text-align: right;
+padding:5px;
+
+}
+
+  
+  html,body{
+      width: 100%;
+      height: 100%;
+      margin: 0; 
+      padding: 0; 
+      border: solid blue;
+      border-width: thin;
+      overflow:hidden;
+      display:block;
+      box-sizing: border-box;
+  }  
+  input[type=text]{
+    padding:3px;
+    margin-bottom:6px; /* Reduced from whatever it currently is */
+    margin-top:6px; /* Reduced from whatever it currently is */
+  }
+  input[type=text1]{
+    padding:3px;
+    margin-bottom:6px; /* Reduced from whatever it currently is */
+    margin-top:6px; /* Reduced from whatever it currently is */
+  }
+  input[type=text2]{
+    padding:3px;
+    margin-bottom:6px; /* Reduced from whatever it currently is */
+    margin-top:6px; /* Reduced from whatever it currently is */
+  }
+
+  #wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:1200px;
+    margin: 0 auto; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  padding: 10px 10px 10px 30px;
+  width: 200px;
+  border: solid 1px lightgray;
+  border-radius: 20px;
+}
+
+label {
+ 
+  
+ 
+  color: black;
+ 
+ 
+  font-weight: bold;
+  margin-right: -2px;
+  margin-left:10px;
+  z-index: 999999;
+  position: relative;
+}
+
+.scrollabletextbox {
+  height:100px;
+  width:200px;
+  font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 82%;
+  overflow:scroll;
+}
+
+textarea {
+  overflow-y: auto;
+  -ms-overflow-style:auto;
+}
+html,
+body {
+width: 100%;
+height: 100%;
+min-height: 100%;
+
+color: #efefef;
+}
+
+.container {
+max-width: unset;
+}
+
+.title {
+background: grey;
+padding: 2px;
+width: 100%;
+height:30px;
+font-size: 3px;
+color: aliceblue;
+bottom: 0px;
+right: 0px;
+left: 0px;
+text-align: center;
+text-decoration: none;
+margin-top: 3px;
+margin-bottom: 3px;
+}
+
+#item img {
+max-width: 100%;
+}
+
+
+.container-xl{
+ display: inline-block;
+}
+div.a {
+white-space: nowrap; 
+width: 50px; 
+overflow: hidden;
+text-overflow: ellipsis; 
+border: 1px solid #000000;
+}

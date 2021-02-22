@@ -1,0 +1,613 @@
+<form class='card p-2 bg-light'>
+  <div class="container-fluid" style="border:4px solid #cecece;">
+
+
+    <div class="header">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png"
+        alt="logo">
+      <h3>Settings</h3>
+    </div>
+
+    <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+
+      <div class="card-header">
+        <div class="title">
+          <h5><u>Device information</u></h5>
+        </div>
+      </div>
+      <!--- Operating Number --->
+      <form class="form-inline">
+        <div id="wrapper">
+          <div class="container-small">
+
+            <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.OPERATINGNUMBER"
+              id="OPERATINGNUMBER" ngModel>
+
+            <label class="col-sm-2 col-form-label" for="DIVISION"> Division: </label>
+            <input type="text" class="form-control" id="DIVISION" [value]="beck?.DIVISION" ngModel>
+            <label class="col-sm-2 col-form-label" for="FEEDER_NAME"> Feeder Name: </label>
+            <input type="text" class="form-control" id="FEEDER_NAME" [value]="beck?.FEEDER_NAME" ngModel>
+
+
+
+
+
+          </div>
+          <div class="container-small">
+
+            <label class="col-sm-2 col-form-label" for="LOCATION"> Location: </label>
+            <input type="text" class="form-control" style="width: 47.5%;" id="LOCATION" [value]="beck?.LOCATION"
+              ngModel>
+
+
+          </div>
+
+          <div class="container-small">
+            <label class="col-sm-2 col-form-label" for="CCRATING"> CC Rating: </label>
+            <input type="text" class="form-control" id="CCRATING" [value]="beck?.CCRATING" ngModel>
+
+          </div>
+
+          <div class="container-small">
+            <label class="col-sm-2 col-form-label" for="DEVICE_TYPE"> Device Type: </label>
+            <input type="text" class="form-control" id="DEVICE_TYPE" [value]="beck?.DEVICE_TYPE" ngModel>
+
+            <label class="col-sm-2 col-form-label" for="NORMAL_OPERATING_PROFILE"> Active profile: </label>
+            <input type="text" class="form-control" id="NORMAL_OPERATING_PROFILE" [value]="beck?.NORMAL_OPERATING_PROFILE" ngModel>
+
+            <label class="col-sm-2 col-form-label" for="MULTI_FUNCTIONAL"> Is Multi-Functional: </label>
+            <input type="text" class="form-control" id="MULTI_FUNCTIONAL" [value]="beck?.MULTI_FUNCTIONAL"
+              ngModel>
+          </div>
+
+          <div class="container-small">
+
+            <label class="col-sm-2 col-form-label" for="CONTROL_TYPE"> Controller Unit Type: </label>
+            <input type="text" class="form-control" id="CONTROL_TYPE" [value]="beck?.CONTROL_TYPE"
+              ngModel>
+
+            <label class="col-sm-2 col-form-label" for="FIRMWARE_VERSION"> Firmware Version: </label>
+            <input type="text" class="form-control" id="FIRMWARE_VERSION" [value]="beck?.FIRMWARE_VERSION"
+              ngModel>
+
+
+          </div>
+
+          <div class="container-small">
+            <label class="col-sm-2 col-form-label" for="CONTROL_SER_NUM"> Controller Serial #: </label>
+            <input type="text" class="form-control" id="CONTROL_SER_NUM" [value]="beck?.CONTROL_SER_NUM"
+              ngModel>
+
+          </div>
+
+          <div class="container-small">
+
+            <label for="FLISR" class="col-sm-2 col-form-label">FLISR Device: </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.FLISR" id='FLISR' ngModel>
+
+            <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.SCADA" id='SCADA' ngModel>
+            <label for="RB_ENABLED" class="col-sm-2 col-form-label">Permit Reclose Block Cut-in: </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.RB_ENABLED" id='RB_ENABLED' ngModel>
+
+
+          </div>
+
+          <div class="container-small">
+
+            <label for="SUMMER_LOAD_LIMIT" class="col-sm-2 col-form-label">Summer Load Limit (amps): </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.SUMMER_LOAD_LIMIT" id='SUMMER_LOAD_LIMIT' ngModel>
+            <label for="TRANSFER_TRIP" class="col-sm-2 col-form-label">Transfer Trip: </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.TRANSFER_TRIP" id='TRANSFER_TRIP' ngModel>
+
+
+          </div>
+
+          <div class="container-small">
+
+            <label for="WINTER_LOAD_LIMIT" class="col-sm-2 col-form-label">Winter Load Limit (amps): </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="beck?.WINTER_LOAD_LIMIT" id='WINTER_LOAD_LIMIT' ngModel>
+          </div>
+
+          <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+          <div class="container-xl"
+            style="border: 1px solid grey;background:white;margin-right:-35px;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+            <textarea readonly class="form-control-plaintext" [value]="beck?.ENGINEERING_COMMENTS"
+              id='ENGINEERING_COMMENTS' ngModel>
+        </textarea>
+          </div>
+          <br>
+          <br>
+
+          <label for="BYPASS_PLANS" class="col-sm-2 control-label">Bypass Plan: </label>
+
+          <div class="container-xl"
+            style="border: 1px solid grey; background:white;margin-bottom: -25px; width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+            <textarea readonly class="form-control-plaintext" [value]="beck?.BYPASS_PLANS" id='BYPASS_PLANS'
+              ngModel>
+              </textarea>
+
+          </div>
+
+          <br>
+          <br>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+
+     
+
+        <div class="title">
+          <h5><u>Settings information</u></h5>
+        </div>
+        <div class="title">
+          <h5><u>Recloser Mode 1</u></h5>
+        </div>
+        <div class="card-group">
+          <div class="w-53 p-2">
+            <div class="card">
+
+              <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+
+                <div class="container-small">
+                  <label for="LR_MD1_PHA_MTT"> Minimum Trip(Phase):</label>
+                  <input type="text2" id="LR_MD1_PHA_MTT" [value]="beck?.LR_MD1_PHA_MTT" readonly>
+                  <label for="LR_MD1_GRD_MTT"> Minimum Trip(Ground):</label>
+                  <input type="text2" id="LR_MD1_GRD_MTT" [value]="beck?.LR_MD1_GRD_MTT" readonly>
+
+                </div>
+                <div class="container-small">
+                  <label for="LR_MD1_PHA_INST_MULT"> Inst. Trip(Phase):</label>
+                  <input type="text2" id="LR_MD1_PHA_INST_MULT" [value]="beck?.LR_MD1_PHA_INST_MULT" readonly>
+                  <label for="LR_MD1_GRD_INST_MULT"> Inst. Trip(Ground):</label>
+                  <input type="text2" id="LR_MD1_GRD_INST_MULT" [value]="beck?.LR_MD1_GRD_INST_MULT" readonly>
+                  <div class="title1">
+                    <h5><u>TCC1: Fast Curves</u></h5>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD1_PHA_TCC1_CRV"> Fast Curve(Phase):</label>
+                    <input type="text2" id="LR_MD1_PHA_TCC1_CRV" [value]="beck?.LR_MD1_PHA_TCC1_CRV" readonly>
+                    <label for="LR_MD1_GRD_TCC1_CRV"> Fast Curve(Ground):</label>
+                    <input type="text2" id="LR_MD1_GRD_TCC1_CRV" [value]="beck?.LR_MD1_GRD_TCC1_CRV" readonly>
+
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD1_PHA_TCC1_TMUL"> VMul Fast(Phase):</label>
+                    <input type="text2" id="LR_MD1_PHA_TCC1_TMUL" [value]="beck?.LR_MD1_PHA_TCC1_TMUL" readonly>
+                    <label for="LR_MD1_GRD_TCC1_TMUL"> VMul Fast(Ground):</label>
+                    <input type="text2" id="LR_MD1_GRD_TCC1_TMUL" [value]="beck?.LR_MD1_GRD_TCC1_TMUL" readonly>
+
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD1_PHA_TCC1_TADD"> TAdd Fast(Phase):</label>
+                    <input type="text2" id="LR_MD1_PHA_TCC1_TADD" [value]="beck?.LR_MD1_PHA_TCC1_TADD" readonly>
+                    <label for="LR_MD1_GRD_TCC1_TADD"> TAdd Fast(Ground):</label>
+                    <input type="text2" id="LR_MD1_GRD_TCC1_TADD" [value]="beck?.LR_MD1_GRD_TCC1_TADD" readonly>
+
+                  </div>
+                  <div class="title1">
+                    <h5><u>TCC2: Slow Curves</u></h5>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD1_PHA_TCC2_CRV"> Slow Curve(Phase):</label>
+                    <input type="text2" id="LR_MD1_PHA_TCC2_CRV" [value]="beck?.LR_MD1_PHA_TCC2_CRV" readonly>
+                    <label for="LR_MD1_GRD_TCC2_CRV"> Slow Curve(Ground):</label>
+                    <input type="text2" id="LR_MD1_GRD_TCC2_CRV" [value]="beck?.LR_MD1_GRD_TCC2_CRV" readonly>
+
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD1_PHA_TCC2_TMUL"> VMul Slow(Phase):</label>
+                    <input type="text2" id="LR_MD1_PHA_TCC2_TMUL" [value]="beck?.LR_MD1_PHA_TCC2_TMUL" readonly>
+                    <label for="LR_MD1_GRD_TCC2_TMUL"> VMul Slow(Ground):</label>
+                    <input type="text2" id="LR_MD1_GRD_TCC2_TMUL" [value]="beck?.LR_MD1_GRD_TCC2_TMUL" readonly>
+
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD1_PHA_TCC2_TADD"> TAdd Slow(Phase):</label>
+                    <input type="text2" id="LR_MD1_PHA_TCC2_TADD" [value]="beck?.LR_MD1_PHA_TCC2_TADD" readonly>
+                    <label for="LR_MD1_GRD_TCC2_TADD"> TAdd Slow(Ground):</label>
+                    <input type="text2" id="LR_MD1_GRD_TCC2_TADD" [value]="beck?.LR_MD1_GRD_TCC2_TADD" readonly>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+
+              <div class="container-small">
+                <label for="LR_MD1_OPS_TO_LOCKOUT"> Ops to lockout:</label>
+                <input type="text2" id="LR_MD1_OPS_TO_LOCKOUT" [value]="beck?.LR_MD1_OPS_TO_LOCKOUT" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_RECLOSE1_TIME"> 1st reclose:</label>
+                <input type="text2" id="LR_MD1_RECLOSE1_TIME" [value]="beck?.LR_MD1_RECLOSE1_TIME" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_RECLOSE2_TIME"> 2nd reclose:</label>
+                <input type="text2" id="LR_MD1_RECLOSE2_TIME" [value]="beck?.LR_MD1_RECLOSE2_TIME" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_RECLOSE3_TIME"> 3rd reclose:</label>
+                <input type="text2" id="LR_MD1_RECLOSE3_TIME" [value]="beck?.LR_MD1_RECLOSE3_TIME" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_RESET_TIME"> Reset Time:</label>
+                <input type="text2" id="LR_MD1_RESET_TIME" [value]="beck?.LR_MD1_RESET_TIME" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_SGF_ENABLED"> Sensitive Ground Fault(SGF):</label>
+                <input type="text2" id="LR_MD1_SGF_ENABLED" [value]="beck?.LR_MD1_SGF_ENABLED" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_CLPU_ENABLED"> Cold Load Pickup Enabled:</label>
+                <input type="text2" id="LR_MD1_CLPU_ENABLED" [value]="beck?.LR_MD1_CLPU_ENABLED" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_CLPU_PHA_MTT"> Phase MTT:</label>
+                <input type="text2" id="LR_MD1_CLPU_PHA_MTT" [value]="beck?.LR_MD1_CLPU_PHA_MTT" readonly>
+              </div>
+              <div class="container-small">
+                <label for="LR_MD1_CLPU_GRD_MTT"> Ground MTT:</label>
+                <input type="text2" id="LR_MD1_CLPU_GRD_MTT" [value]="beck?.LR_MD1_CLPU_GRD_MTT" readonly>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+</form>
+<form class='card p-2 bg-light'>
+  <div class="container-fluid" style="border:4px solid #cecece;">
+
+    <div class="card-group">
+
+      <div class="card">
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+          <div class="card-body">
+
+            <div class="container-small">
+
+              <label for="inputOperationNo" class="col-sm-2 col-form-label">Operating #: </label>
+              <input type="text" [value]="beck?.BYPASS_PLANS" readonly class="form-control-plaintext" [value]="beck?.OPERATINGNUMBER"
+                id="inputOperationno" ngModel>
+            </div>
+            <div class="title">
+              <h5><u>Recloser Mode 2</u></h5>
+            </div>
+            <div class="card-group">
+              <div class="w-53 p-2">
+                <div class="card">
+
+                  <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+
+                    <div class="container-small">
+                      <label for="LR_MD2_PHA_MTT"> Minimum Trip(Phase):</label>
+                      <input type="text2" id="LR_MD2_PHA_MTT" [value]="beck?.LR_MD2_PHA_MTT" readonly>
+                      <label for="LR_MD2_GRD_MTT"> Minimum Trip(Ground):</label>
+                      <input type="text2" id="LR_MD2_GRD_MTT" [value]="beck?.LR_MD2_GRD_MTT" readonly>
+    
+                    </div>
+                    <div class="container-small">
+                      <label for="LR_MD2_PHA_INST_MULT"> Inst. Trip(Phase):</label>
+                      <input type="text2" id="LR_MD2_PHA_INST_MULT" [value]="beck?.LR_MD2_PHA_INST_MULT" readonly>
+                      <label for="LR_MD2_GRD_INST_MULT"> Inst. Trip(Ground):</label>
+                      <input type="text2" id="LR_MD2_GRD_INST_MULT" [value]="beck?.LR_MD2_GRD_INST_MULT" readonly>
+                      <div class="title1">
+                        <h5><u>TCC1: Fast Curves</u></h5>
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD2_PHA_TCC1_CRV"> Fast Curve(Phase):</label>
+                        <input type="text2" id="LR_MD2_PHA_TCC1_CRV" [value]="beck?.LR_MD2_PHA_TCC1_CRV" readonly>
+                        <label for="LR_MD2_GRD_TCC1_CRV"> Fast Curve(Ground):</label>
+                        <input type="text2" id="LR_MD2_GRD_TCC1_CRV" [value]="beck?.LR_MD2_GRD_TCC1_CRV" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD2_PHA_TCC1_TMUL"> VMul Fast(Phase):</label>
+                        <input type="text2" id="LR_MD2_PHA_TCC1_TMUL" [value]="beck?.LR_MD2_PHA_TCC1_TMUL" readonly>
+                        <label for="LR_MD2_GRD_TCC1_TMUL"> VMul Fast(Ground):</label>
+                        <input type="text2" id="LR_MD2_GRD_TCC1_TMUL" [value]="beck?.LR_MD2_GRD_TCC1_TMUL" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD2_PHA_TCC1_TADD"> TAdd Fast(Phase):</label>
+                        <input type="text2" id="LR_MD2_PHA_TCC1_TADD" [value]="beck?.LR_MD2_PHA_TCC1_TADD" readonly>
+                        <label for="LR_MD2_GRD_TCC1_TADD"> TAdd Fast(Ground):</label>
+                        <input type="text2" id="LR_MD2_GRD_TCC1_TADD" [value]="beck?.LR_MD2_GRD_TCC1_TADD" readonly>
+    
+                      </div>
+                      <div class="title1">
+                        <h5><u>TCC2: Slow Curves</u></h5>
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD2_PHA_TCC2_CRV"> Slow Curve(Phase):</label>
+                        <input type="text2" id="LR_MD2_PHA_TCC2_CRV" [value]="beck?.LR_MD2_PHA_TCC2_CRV" readonly>
+                        <label for="LR_MD2_GRD_TCC2_CRV"> Slow Curve(Ground):</label>
+                        <input type="text2" id="LR_MD2_GRD_TCC2_CRV" [value]="beck?.LR_MD2_GRD_TCC2_CRV" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD2_PHA_TCC2_TMUL"> VMul Slow(Phase):</label>
+                        <input type="text2" id="LR_MD2_PHA_TCC2_TMUL" [value]="beck?.LR_MD2_PHA_TCC2_TMUL" readonly>
+                        <label for="LR_MD2_GRD_TCC2_TMUL"> VMul Slow(Ground):</label>
+                        <input type="text2" id="LR_MD2_GRD_TCC2_TMUL" [value]="beck?.LR_MD2_GRD_TCC2_TMUL" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD2_PHA_TCC2_TADD"> TAdd Slow(Phase):</label>
+                        <input type="text2" id="LR_MD2_PHA_TCC2_TADD" [value]="beck?.LR_MD2_PHA_TCC2_TADD" readonly>
+                        <label for="LR_MD2_GRD_TCC2_TADD"> TAdd Slow(Ground):</label>
+                        <input type="text2" id="LR_MD2_GRD_TCC2_TADD" [value]="beck?.LR_MD2_GRD_TCC2_TADD" readonly>
+                      </div>
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="card">
+    
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+    
+                  <div class="container-small">
+                    <label for="LR_MD2_OPS_TO_LOCKOUT"> Ops to lockout:</label>
+                    <input type="text2" id="LR_MD2_OPS_TO_LOCKOUT" [value]="beck?.LR_MD2_OPS_TO_LOCKOUT" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_RECLOSE1_TIME"> 1st reclose:</label>
+                    <input type="text2" id="LR_MD2_RECLOSE1_TIME" [value]="beck?.LR_MD2_RECLOSE1_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_RECLOSE2_TIME"> 2nd reclose:</label>
+                    <input type="text2" id="LR_MD2_RECLOSE2_TIME" [value]="beck?.LR_MD2_RECLOSE2_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_RECLOSE3_TIME"> 3rd reclose:</label>
+                    <input type="text2" id="LR_MD2_RECLOSE3_TIME" [value]="beck?.LR_MD2_RECLOSE3_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_RESET_TIME"> Reset Time:</label>
+                    <input type="text2" id="LR_MD2_RESET_TIME" [value]="beck?.LR_MD2_RESET_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_SGF_ENABLED"> Sensitive Ground Fault(SGF):</label>
+                    <input type="text2" id="LR_MD2_SGF_ENABLED" [value]="beck?.LR_MD2_SGF_ENABLED" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_CLPU_ENABLED"> Cold Load Pickup Enabled:</label>
+                    <input type="text2" id="LR_MD2_CLPU_ENABLED" [value]="beck?.LR_MD2_CLPU_ENABLED" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_CLPU_PHA_MTT"> Phase MTT:</label>
+                    <input type="text2" id="LR_MD2_CLPU_PHA_MTT" [value]="beck?.LR_MD2_CLPU_PHA_MTT" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD2_CLPU_GRD_MTT"> Ground MTT:</label>
+                    <input type="text2" id="LR_MD2_CLPU_GRD_MTT" [value]="beck?.LR_MD2_CLPU_GRD_MTT" readonly>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+<form class='card p-2 bg-light'>
+  <div class="container-fluid" style="border:4px solid #cecece;">
+
+    <div class="card-group">
+
+      <div class="card">
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+          <div class="card-body">
+
+            <div class="container-small">
+
+              <label for="inputOperationNo" class="col-sm-2 col-form-label">Operating #: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="beck?.OPERATINGNUMBER"
+                id="inputOperationno" ngModel>
+            </div>
+            <div class="title">
+              <h5><u>Recloser mode 3</u></h5>
+            </div>
+            <div class="card-group">
+              <div class="w-53 p-2">
+                <div class="card">
+
+                  <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+
+                    <div class="container-small">
+                      <label for="LR_MD3_PHA_MTT"> Minimum Trip(Phase):</label>
+                      <input type="text2" id="LR_MD3_PHA_MTT" [value]="beck?.LR_MD3_PHA_MTT" readonly>
+                      <label for="LR_MD3_GRD_MTT"> Minimum Trip(Ground):</label>
+                      <input type="text2" id="LR_MD3_GRD_MTT" [value]="beck?.LR_MD3_GRD_MTT" readonly>
+    
+                    </div>
+                    <div class="container-small">
+                      <label for="LR_MD3_PHA_INST_MULT"> Inst. Trip(Phase):</label>
+                      <input type="text2" id="LR_MD3_PHA_INST_MULT" [value]="beck?.LR_MD3_PHA_INST_MULT" readonly>
+                      <label for="LR_MD3_GRD_INST_MULT"> Inst. Trip(Ground):</label>
+                      <input type="text2" id="LR_MD3_GRD_INST_MULT" [value]="beck?.LR_MD3_GRD_INST_MULT" readonly>
+                      <div class="title1">
+                        <h5><u>TCC1: Fast Curves</u></h5>
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD3_PHA_TCC1_CRV"> Fast Curve(Phase):</label>
+                        <input type="text2" id="LR_MD3_PHA_TCC1_CRV" [value]="beck?.LR_MD3_PHA_TCC1_CRV" readonly>
+                        <label for="LR_MD3_GRD_TCC1_CRV"> Fast Curve(Ground):</label>
+                        <input type="text2" id="LR_MD3_GRD_TCC1_CRV" [value]="beck?.LR_MD3_GRD_TCC1_CRV" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD3_PHA_TCC1_TMUL"> VMul Fast(Phase):</label>
+                        <input type="text2" id="LR_MD3_PHA_TCC1_TMUL" [value]="beck?.LR_MD3_PHA_TCC1_TMUL" readonly>
+                        <label for="LR_MD3_GRD_TCC1_TMUL"> VMul Fast(Ground):</label>
+                        <input type="text2" id="LR_MD3_GRD_TCC1_TMUL" [value]="beck?.LR_MD3_GRD_TCC1_TMUL" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD3_PHA_TCC1_TADD"> TAdd Fast(Phase):</label>
+                        <input type="text2" id="LR_MD3_PHA_TCC1_TADD" [value]="beck?.LR_MD3_PHA_TCC1_TADD" readonly>
+                        <label for="LR_MD3_GRD_TCC1_TADD"> TAdd Fast(Ground):</label>
+                        <input type="text2" id="LR_MD3_GRD_TCC1_TADD" [value]="beck?.LR_MD3_GRD_TCC1_TADD" readonly>
+    
+                      </div>
+                      <div class="title1">
+                        <h5><u>TCC2: Slow Curves</u></h5>
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD3_PHA_TCC2_CRV"> Slow Curve(Phase):</label>
+                        <input type="text2" id="LR_MD3_PHA_TCC2_CRV" [value]="beck?.LR_MD3_PHA_TCC2_CRV" readonly>
+                        <label for="LR_MD3_GRD_TCC2_CRV"> Slow Curve(Ground):</label>
+                        <input type="text2" id="LR_MD3_GRD_TCC2_CRV" [value]="beck?.LR_MD3_GRD_TCC2_CRV" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD3_PHA_TCC2_TMUL"> VMul Slow(Phase):</label>
+                        <input type="text2" id="LR_MD3_PHA_TCC2_TMUL" [value]="beck?.LR_MD3_PHA_TCC2_TMUL" readonly>
+                        <label for="LR_MD3_GRD_TCC2_TMUL"> VMul Slow(Ground):</label>
+                        <input type="text2" id="LR_MD3_GRD_TCC2_TMUL" [value]="beck?.LR_MD3_GRD_TCC2_TMUL" readonly>
+    
+                      </div>
+                      <div class="container-small">
+                        <label for="LR_MD3_PHA_TCC2_TADD"> TAdd Slow(Phase):</label>
+                        <input type="text2" id="LR_MD3_PHA_TCC2_TADD" [value]="beck?.LR_MD3_PHA_TCC2_TADD" readonly>
+                        <label for="LR_MD3_GRD_TCC2_TADD"> TAdd Slow(Ground):</label>
+                        <input type="text2" id="LR_MD3_GRD_TCC2_TADD" [value]="beck?.LR_MD3_GRD_TCC2_TADD" readonly>
+                      </div>
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="card">
+    
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+    
+                  <div class="container-small">
+                    <label for="LR_MD3_OPS_TO_LOCKOUT"> Ops to lockout:</label>
+                    <input type="text2" id="LR_MD3_OPS_TO_LOCKOUT" [value]="beck?.LR_MD3_OPS_TO_LOCKOUT" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_RECLOSE1_TIME"> 1st reclose:</label>
+                    <input type="text2" id="LR_MD3_RECLOSE1_TIME" [value]="beck?.LR_MD3_RECLOSE1_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_RECLOSE2_TIME"> 2nd reclose:</label>
+                    <input type="text2" id="LR_MD3_RECLOSE2_TIME" [value]="beck?.LR_MD3_RECLOSE2_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_RECLOSE3_TIME"> 3rd reclose:</label>
+                    <input type="text2" id="LR_MD3_RECLOSE3_TIME" [value]="beck?.LR_MD3_RECLOSE3_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_RESET_TIME"> Reset Time:</label>
+                    <input type="text2" id="LR_MD3_RESET_TIME" [value]="beck?.LR_MD3_RESET_TIME" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_SGF_ENABLED"> Sensitive Ground Fault(SGF):</label>
+                    <input type="text2" id="LR_MD3_SGF_ENABLED" [value]="beck?.LR_MD3_SGF_ENABLED" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_CLPU_ENABLED"> Cold Load Pickup Enabled:</label>
+                    <input type="text2" id="LR_MD3_CLPU_ENABLED" [value]="beck?.LR_MD3_CLPU_ENABLED" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_CLPU_PHA_MTT"> Phase MTT:</label>
+                    <input type="text2" id="LR_MD3_CLPU_PHA_MTT" [value]="beck?.LR_MD3_CLPU_PHA_MTT" readonly>
+                  </div>
+                  <div class="container-small">
+                    <label for="LR_MD3_CLPU_GRD_MTT"> Ground MTT:</label>
+                    <input type="text2" id="LR_MD3_CLPU_GRD_MTT" [value]="beck?.LR_MD3_CLPU_GRD_MTT" readonly>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" style="border:4px solid #cecece;">
+
+    <div class="card-group">
+
+      <div class="card">
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+          <div class="card-body">
+
+            <div class="container-small">
+
+
+            </div>
+            <div class="title">
+              <h5><u>Sectionalizer Mode</u></h5>
+            </div>
+
+            <div class="container-small">
+              <label for="SECT_MD_PHA_MTT" class="col-sm-2 col-form-label"> Minimum Trip(Phase):</label>
+              <input type="text2" id="SECT_MD_PHA_MTT" [value]="beck?.SECT_MD_PHA_MTT" readonly>
+              <label for="SECT_MD_GRD_MTT" class="col-sm-2 col-form-label"> Minimum Trip(Ground):</label>
+              <input type="text2" id="SECT_MD_GRD_MTT" [value]="beck?.SECT_MD_GRD_MTT" readonly>
+              <label for="SECT_MD_OPS_TO_LOCKOUT" class="col-sm-2 col-form-label"> Ops to lockout:</label>
+              <input type="text2" id="SECT_MD_OPS_TO_LOCKOUT" [value]="beck?.SECT_MD_OPS_TO_LOCKOUT" readonly>
+            </div>
+            <div class="title1">
+              <h5><u>TCC1: Fast Curves</u></h5>
+            </div>
+            <div class="container-small">
+              <label for="SECT_MD_PHA_CRV" class="col-sm-2 col-form-label"> Fast Curve(Phase):</label>
+              <input type="text2" id="SECT_MD_PHA_CRV" [value]="beck?.SECT_MD_PHA_CRV" readonly>
+              <label for="SECT_MD_GRD_CRV" class="col-sm-2 col-form-label"> Fast Curve(Ground):</label>
+              <input type="text2" id="SECT_MD_GRD_CRV" [value]="beck?.SECT_MD_GRD_CRV" readonly>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" style="border:4px solid #cecece;">
+
+    <div class="card-group">
+
+      <div class="card">
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+          <div class="card-body">
+
+            <div class="container-small">
+
+
+            </div>
+            <div class="title">
+              <h5><u>Switch Mode</u></h5>
+            </div>
+            <div class="container">
+              <label for="SW_MD_PHA_MTT" class="col-sm-2 col-form-label"> Minimum Trip(Phase):</label>
+              <input type="text2" id="SW_MD_PHA_MTT" [value]="beck?.SW_MD_PHA_MTT" readonly>
+              <label for="SW_MD_GRD_MTT" class="col-sm-2 col-form-label"> Minimum Trip(Ground):</label>
+              <input type="text2" id="SW_MD_GRD_MTT" [value]="beck?.SW_MD_GRD_MTT" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,163 @@
+<form class='card p-2 bg-light'>
+    <div class="container-fluid" style="border:4px solid #cecece;">
+
+
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png"
+                alt="logo">
+            <h3>Settings</h3>
+        </div>
+
+
+
+
+
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+            <div class="card-header">
+                <div class="title">
+                    <h5><u>Device information</u></h5>
+                </div>
+            </div>
+            <form class="form-inline">
+                <div id="wrapper">
+
+                    <label for="FEEDER_NAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.FEEDER_NAME"
+                        id='FEEDER_NAME' ngModel>
+
+                    <label for="CCRATING" class="col-sm-2 col-form-label">CC Rating: </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.CCRATING" id='CCRATING'
+                        ngModel>
+                    <br>
+                    <div class="container-small">
+                        <label for="DEVICE_TYPE" class="col-sm-2 col-form-label">Type: </label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.DEVICE_TYPE"
+                            id='DEVICE_TYPE' ngModel>
+
+                        <label for="cirTIONALIZER_TYPE" class="col-sm-2 col-form-label">Relay Type: </label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.cirTIONALIZER_TYPE"
+                            id='cirTIONALIZER_TYPE' ngModel>
+                    </div>
+                    <label for="FLISR" class="col-sm-2 col-form-label">FLISR Device: </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.FLISR" id='FLISR' ngModel>
+                    <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.SCADA" id='SCADA' ngModel>
+                    <label for="RB_ENABLED" class="col-sm-auto col-form-label">Permit Reclose Block Cut-In: </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.RB_ENABLED" id='RB_ENABLED'
+                        ngModel>
+                    <br>
+                    <label for="SUMMER_LOAD_LIMIT" class="col-sm-2 col-form-label">Summer Load Limit(amps): </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.SUMMER_LOAD_LIMIT"
+                        id='SUMMER_LOAD_LIMIT' ngModel>
+                    <label for="TRANSFER_TRIP" class="col-sm-2 col-form-label">Transfer Trip:</label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.TRANSFER_TRIP"
+                        id='TRANSFER_TRIP' ngModel>
+                    <br>
+                    <label for="WINTER_LOAD_LIMIT" class="col-sm-2 col-form-label">Winter Load Limit(amps): </label>
+                    <input type="text" readonly class="form-control-plaintext" [value]="cir?.WINTER_LOAD_LIMIT"
+                        id='WINTER_LOAD_LIMIT' ngModel>
+                    <br>
+                    <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+                    <div class="container-xl"
+                        style="background-color: white;border:1px solid grey;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+                        <textarea readonly class="form-control-plaintext" [value]="cir?.ENGINEERING_COMMENTS"
+                            id='ENGINEERING_COMMENTS' ngModel>
+                    </textarea>
+                    </div>
+                    <br>
+                    <br>
+
+
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+            <div class="card-header">
+                <div class="title">
+                    <h5><u>Settings information</u></h5>
+                </div>
+            </div>
+            <div class="card-deck">
+
+                <div class="card" style="max-width: auto;">
+
+                    <div class="card-body" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+                        <div class="card-header">
+                            <div class="title">
+                                <h5><u>Primary Phase Relay</u></h5>
+                            </div>
+                        </div>
+
+
+
+                        <br>
+
+                        <label for="MINIMUM_TRIP_PHASE" class="col-sm-6 col-form-label">Min. to Trip: </label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.MINIMUM_TRIP_PHASE"
+                            id='MINIMUM_TRIP_PHASE' ngModel>
+                        <br>
+                        <label for="CURVE_PHASE" class="col-sm-6 col-form-label">Curve: </label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.CURVE_PHASE"
+                            id='CURVE_PHASE' ngModel>
+                        <br>
+                        <label for="TIME_DIAL_PHASE" class="col-sm-6 col-form-label">Time Dial:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.TIME_DIAL_PHASE"
+                            id='TIME_DIAL_PHASE' ngModel>
+
+
+
+                        <br>
+                        <label for="INST_PICKUP_PHASE" class="col-sm-6 col-form-label">Instantaneous
+                            Pickup:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.INST_PICKUP_PHASE"
+                            id='INST_PICKUP_PHASE' ngModel>
+                        <br>
+                        <label for="INST_DELAY_PHASE" class="col-sm-6 col-form-label">Instantaneous
+                            Delay:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.INST_DELAY_PHASE"
+                            id='INST_DELAY_PHASE' ngModel>
+                    </div>
+                </div>
+                <div class="card" style="max-width: auto;">
+
+                    <div class="card-body" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+                        <div class="card-header">
+                            <div class="title">
+                                <h5><u>Primary Ground Relay</u></h5>
+                            </div>
+                        </div>
+                        <br>
+
+                        <label for="MINIMUM_TRIP_GROUND" class="col-sm-6 col-form-label">Min. to Trip :</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.MINIMUM_TRIP_GROUND"
+                            id='MINIMUM_TRIP_GROUND' ngModel>
+                        <br>
+                        <label for="CURVE_GROUND" class="col-sm-6 col-form-label">Curve:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.CURVE_GROUND"
+                            id='CURVE_GROUND' ngModel>
+                        <br>
+                        <label for="TIME_DIAL_GROUND" class="col-sm-6 col-form-label">Time Dial:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.TIME_DIAL_GROUND"
+                            id='TIME_DIAL_GROUND' ngModel>
+
+                        <br>
+                        <label for="INST_PICKUP_GROUND" class="col-sm-6 col-form-label">Instantaneous
+                            Pickup:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.INST_PICKUP_GROUND"
+                            id='INST_PICKUP_GROUND' ngModel>
+                        <br>
+                        <label for="INST_DELAY_GROUND" class="col-sm-6 col-form-label">Instantaneous
+                            Delay:</label>
+                        <input type="text" readonly class="form-control-plaintext" [value]="cir?.INST_DELAY_GROUND"
+                            id='INST_DELAY_GROUND' ngModel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

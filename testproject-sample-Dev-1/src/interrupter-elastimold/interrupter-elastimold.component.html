@@ -1,0 +1,204 @@
+
+
+<form class = 'card p-2 bg-light'>
+    <div class="container-fluid" style="border:4px solid #cecece;" >
+     
+      
+      <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png" alt="logo">
+        <h3>Settings</h3>
+      </div>
+      
+
+
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+
+            <div class="card-header">
+                <div class="title">
+                    <h5><u>Device information</u></h5>
+                </div>
+            </div>
+
+
+
+            <!--- Operating Number --->
+
+            <div class="container">
+
+
+
+                <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.OPERATINGNUMBER"
+                    id='OPERATINGNUMBER' ngModel>
+                <label for="DIVISION" class="col-sm-2 col-form-label">Division: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.DIVISION" id='DIVISION'
+                    ngModel>
+                <label for="FEEDERNAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.FEEDERNAME"
+                    id='FEEDERNAME' ngModel>
+                <label for="LOCATION" class="col-sm-2 col-form-label">Location: </label>
+                <input type="text" style="width: 47.5%;" readonly class="form-control-plaintext" [value]="intelasti?.LOCATION" id='LOCATION'
+                    ngModel>
+                <label for="CCRATING" class="col-sm-2 col-form-label">CC Rating: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.CCRATING" id='CCRATING'
+                    ngModel>
+                <br>
+                <label for="DEVICE_TYPE" class="col-sm-2 col-form-label">Device Type: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.DEVICE_TYPE"
+                    id='DEVICE_TYPE' ngModel>
+                <label for="NORMAL_OPERATING_MODE" class="col-sm-2 col-form-label">Operating Mode: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.NORMAL_OPERATING_MODE"
+                    id='NORMAL_OPERATING_MODE' ngModel>
+                <br>
+                <label for="CONTROL_TYPE" class="col-sm-2 col-form-label">Controller Unit Type: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.CONTROL_TYPE"
+                    id='CONTROL_TYPE' ngModel>
+                <br>
+                <label for="FLISR" class="col-sm-2 col-form-label">FLISR Device: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.FLISR" id='FLISR'
+                    ngModel>
+                <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.SCADA" id='SCADA'
+                    ngModel>
+                <br>
+                <label for="SUMMER_LOAD_LIMIT" class="col-sm-2 col-form-label">Summer Load Limit(amps): </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.SUMMER_LOAD_LIMIT"
+                    id='SUMMER_LOAD_LIMIT' ngModel>
+                <br>
+                <label for="WINTER_LOAD_LIMIT" class="col-sm-2 col-form-label">Winter Load Limit(amps): </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.WINTER_LOAD_LIMIT"
+                    id='WINTER_LOAD_LIMIT' ngModel>
+                <br>
+            </div>
+
+            <div>
+                <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+                <div class="container-xl"
+                    style="border: 1px solid grey;background:white;margin-right:-35px;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+                    <textarea readonly class="form-control-plaintext" [value]="intelasti?.ENGINEERING_COMMENTS"
+                        id='ENGINEERING_COMMENTS' ngModel>
+      </textarea>
+
+                </div>
+
+                <br>
+                <br>
+            </div>
+
+        </div>
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+
+          
+
+                <div class="title">
+                    <h5><u>Settings information</u></h5>
+                </div>
+
+
+
+                <div class="card-deck" style="max-width: auto;">
+                    <div class="card" >
+
+                        <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                            <div class="container">
+                                <div class="title">
+                                    <h5><u>Phase</u></h5>
+                                </div>
+
+                                <br>
+                                <label for="PHA_MTT" class="col-sm-6 col-form-label">Overcurrent Min. to Trip:</label>
+                                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.PHA_MTT"
+                                    id='PHA_MTT' ngModel>
+
+                                <br>
+                                <div class="contentcontainer med left">
+                                    <label for="PHA_TCC_CRV" class="col-sm-6 col-form-label">TCC
+                                        Curve:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.PHA_TCC_CRV" id='PHA_TCC_CRV' ngModel>
+
+                                    <br>
+                                    <label for="PHA_TCC_CRV_TYPE" class="col-sm-6 col-form-label">TCC Curve
+                                        Type:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.PHA_TCC_CRV_TYPE" id='PHA_TCC_CRV_TYPE' ngModel>
+
+                                    <br>
+                                    <label for="PHA_TCC_ADDER" class="col-sm-6 col-form-label">TCC Adder:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.PHA_TCC_ADDER" id='PHA_TCC_ADDER' ngModel>
+
+
+                                    <br>
+                                    <label for="PHA_TCC_MULT" class="col-sm-6 col-form-label">TCC Multiplier:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.PHA_TCC_MULT" id='PHA_TCC_MULT' ngModel>
+                                    <br>
+                                    <label for="PHA_TCC_MRT" class="col-sm-6 col-form-label">TCC Minimum Response Time
+                                        :</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.PHA_TCC_MRT" id='PHA_TCC_MRT' ngModel>
+                                    <br>
+                                </div>
+                                <label for="PHA_INST_PICKUP" class="col-sm-6 col-form-label">Instantaneous Pickup
+                                    :</label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="intelasti?.PHA_INST_PICKUP" id='PHA_INST_PICKUP' ngModel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="max-width: auto;">
+
+                        <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                            <div class="container">
+                                <div class="title">
+                                    <h5><u>Ground</u></h5>
+                                </div>
+
+                                <br>
+                                <label for="GRD_MTT" class="col-sm-6 col-form-label">Overcurrent Min. to Trip:</label>
+                                <input type="text" readonly class="form-control-plaintext" [value]="intelasti?.GRD_MTT"
+                                    id='GRD_MTT' ngModel>
+
+                                <br>
+                                <div class="contentcontainer med left">
+                                    <label for="GRD_TCC_CRV" class="col-sm-6 col-form-label">TCC
+                                        Curve:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.GRD_TCC_CRV" id='GRD_TCC_CRV' ngModel>
+
+                                    <br>
+                                    <label for="GRD_TCC_CRV_TYPE" class="col-sm-6 col-form-label">TCC Curve
+                                        Type:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.GRD_TCC_CRV_TYPE" id='GRD_TCC_CRV_TYPE' ngModel>
+
+                                    <br>
+                                    <label for="GRD_TCC_ADDER" class="col-sm-6 col-form-label">TCC Adder:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.GRD_TCC_ADDER" id='GRD_TCC_ADDER' ngModel>
+
+
+                                    <br>
+                                    <label for="GRD_TCC_MULT" class="col-sm-6 col-form-label">TCC Multiplier:</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.GRD_TCC_MULT" id='GRD_TCC_MULT' ngModel>
+                                    <br>
+                                    <label for="GRD_TCC_MRT" class="col-sm-6 col-form-label">TCC Minimum Response Time
+                                        :</label>
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        [value]="intelasti?.GRD_TCC_MRT" id='GRD_TCC_MRT' ngModel>
+                                    <br>
+                                </div>
+                                <label for="GRD_INST_PICKUP" class="col-sm-6 col-form-label">Instantaneous Pickup
+                                    :</label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="intelasti?.GRD_INST_PICKUP" id='GRD_INST_PICKUP' ngModel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+</form>

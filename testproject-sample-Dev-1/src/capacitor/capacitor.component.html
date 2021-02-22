@@ -1,0 +1,602 @@
+<form class='card p-2 bg-light'>
+    <div class="container-fluid" style="border:4px solid #cecece;">
+
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png"
+                alt="logo">
+            <h3>Settings</h3>
+        </div>
+
+
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+
+            <div class="card-header">
+                <div class="title">
+                    <h5><u>Device information</u></h5>
+                </div>
+            </div>
+
+
+            <!--- Operating Number --->
+
+            <div class="container">
+
+
+                <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.OPERATINGNUMBER"
+                    id='OPERATINGNUMBER' ngModel>
+                <label for="DIVISION" class="col-sm-2 col-form-label">Division: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.DIVISION" id='DIVISION'
+                    ngModel>
+                <label for="FEEDERNAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.FEEDERNAME"
+                    id='FEEDERNAME' ngModel>
+                <label for="LOCATION" class="col-sm-2 col-form-label">Location: </label>
+                <input type="text" style=width:47.5%; readonly class="form-control-plaintext"
+                    [value]="capacitor?.LOCATION" id='LOCATION' ngModel>
+
+                <br>
+                <label for="DEVICE_TYPE" class="col-sm-2 col-form-label">Device Type: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.DEVICE_TYPE"
+                    id='DEVICE_TYPE' ngModel>
+
+                <br>
+                <label for="CONTROL_TYPE" class="col-sm-2 col-form-label">Controller Unit Model: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.CONTROL_TYPE"
+                    id='CONTROL_TYPE' ngModel>
+
+                <br>
+                <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCADA" id='SCADA'
+                    ngModel>
+
+                <br>
+            </div>
+
+            <div>
+                <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+                <div class="container-xl"
+                    style="border: 1px solid grey;background:white;margin-right:-35px;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+                    <textarea readonly class="form-control-plaintext" [value]="capacitor?.ENGINEERING_COMMENTS"
+                        id='ENGINEERING_COMMENTS' ngModel>
+    </textarea>
+
+                </div>
+
+                <br>
+                <br>
+            </div>
+
+
+        </div>
+
+        <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+            <div class="title">
+                <h5><u>Settings information</u></h5>
+            </div>
+
+
+            <div class="container">
+                <label for="HIGH_VOLTAGE_OVERRIDE_SETPOINT" class="col-sm-2 col-form-label">High Voltage Override
+                    Setpoint (V): </label>
+                <input type="text" readonly class="form-control-plaintext"
+                    [value]="capacitor?.HIGH_VOLTAGE_OVERRIDE_SETPOINT" id='HIGH_VOLTAGE_OVERRIDE_SETPOINT' ngModel>
+                <label for="LOW_VOLTAGE_OVERRIDE_SETPOINT" class="col-sm-2 col-form-label">Low Voltage Override Setpoint
+                    (V):</label>
+                <input type="text" readonly class="form-control-plaintext"
+                    [value]="capacitor?.LOW_VOLTAGE_OVERRIDE_SETPOINT" id='LOW_VOLTAGE_OVERRIDE_SETPOINT' ngModel>
+                <label for="BANK_VOLTAGE_CHANGE" class="col-sm-2 col-form-label">Estimated Bank Voltage Change:</label>
+                <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.BANK_VOLTAGE_CHANGE"
+                    id='BANK_VOLTAGE_CHANGE' ngModel>
+            </div>
+
+            <br>
+            <br>
+
+            <!--1 Season-->
+
+            <div
+                *ngIf="capacitor?.CONTROL_TYPE=='Fisher Pierce' || capacitor?.CONTROL_TYPE=='Lincontrol' || capacitor?.CONTROL_TYPE=='SANGAMO' || capacitor?.CONTROL_TYPE=='Sangamo' || capacitor?.CONTROL_TYPE=='Unspecified'">
+                <div class="card-deck"
+                    style="max-width: auto;align-items: center; ">
+
+                    <div class="card"
+                        style="max-width: 425px;margin-left: 400px;  border: 2px solid black;">
+
+                        <div class="card-body" style="align-items: center;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 1:</u></h5>
+                            </div>
+                            <label for="SCH1_CONTROL_STRATEGY">Control Strategy: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_CONTROL_STRATEGY" id='SCH1_CONTROL_STRATEGY' ngModel><br>
+
+                            <label for="SCH1_START_DATE">Start Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_START_DATE" id='SCH1_START_DATE' ngModel><br>
+
+                            <label for="SCH1_END_DATE">End Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_END_DATE" id='SCH1_END_DATE' ngModel><br>
+
+                            <label for="SCH1_TIME_ON">Time setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCH1_TIME_ON"
+                                id='SCH1_TIME_ON' ngModel><br>
+
+                            <label for="SCH1_TIME_OFF">Time setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_TIME_OFF" id='SCH1_TIME_OFF' ngModel><br>
+
+                            <label for="SCH1_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_LOW_VOLTAGE_SETPOINT" id='SCH1_LOW_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH1_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_HIGH_VOLTAGE_SETPOINT" id='SCH1_HIGH_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH1_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_TEMP_SETPOINT_ON" id='SCH1_TEMP_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH1_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_TEMP_SETPOINT_OFF" id='SCH1_TEMP_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH1_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_KVAR_SETPOINT_ON" id='SCH1_KVAR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH1_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_KVAR_SETPOINT_OFF" id='SCH1_KVAR_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH1_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_CUR_SETPOINT_ON" id='SCH1_CUR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH1_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_CUR_SETPOINT_OFF" id='SCH1_CUR_SETPOINT_OFF' ngModel><br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--2 Season-->
+
+            <div *ngIf="capacitor?.CONTROL_TYPE=='IntelliCap' || capacitor?.CONTROL_TYPE=='INTELLICAP'">
+                <div class="card-deck"
+                    style="max-width: auto;align-items: center; ">
+
+                    <div class="card"
+                        style="max-width: 400px;margin-left: 200px;  border: 2px solid black;">
+
+                        <div class="card-body" style="align-items: center;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 1:</u></h5>
+                            </div>
+                            <div class="card-body" style="align-items: center;">
+                                <label for="SCH1_CONTROL_STRATEGY">Control Strategy: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_CONTROL_STRATEGY" id='SCH1_CONTROL_STRATEGY' ngModel><br>
+
+                                <label for="SCH1_START_DATE">Start Date: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_START_DATE" id='SCH1_START_DATE' ngModel><br>
+
+                                <label for="SCH1_END_DATE">End Date: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_END_DATE" id='SCH1_END_DATE' ngModel><br>
+
+                                <label for="SCH1_TIME_ON">Time setpoint on: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_TIME_ON" id='SCH1_TIME_ON' ngModel><br>
+
+                                <label for="SCH1_TIME_OFF">Time setpoint off: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_TIME_OFF" id='SCH1_TIME_OFF' ngModel><br>
+
+                                <label for="SCH1_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_LOW_VOLTAGE_SETPOINT" id='SCH1_LOW_VOLTAGE_SETPOINT'
+                                    ngModel><br>
+
+                                <label for="SCH1_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_HIGH_VOLTAGE_SETPOINT" id='SCH1_HIGH_VOLTAGE_SETPOINT'
+                                    ngModel><br>
+
+                                <label for="SCH1_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_TEMP_SETPOINT_ON" id='SCH1_TEMP_SETPOINT_ON' ngModel><br>
+
+                                <label for="SCH1_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_TEMP_SETPOINT_OFF" id='SCH1_TEMP_SETPOINT_OFF' ngModel><br>
+
+                                <label for="SCH1_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_KVAR_SETPOINT_ON" id='SCH1_KVAR_SETPOINT_ON' ngModel><br>
+
+                                <label for="SCH1_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_KVAR_SETPOINT_OFF" id='SCH1_KVAR_SETPOINT_OFF' ngModel><br>
+
+                                <label for="SCH1_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_CUR_SETPOINT_ON" id='SCH1_CUR_SETPOINT_ON' ngModel><br>
+
+                                <label for="SCH1_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                                <input type="text" readonly class="form-control-plaintext"
+                                    [value]="capacitor?.SCH1_CUR_SETPOINT_OFF" id='SCH1_CUR_SETPOINT_OFF' ngModel><br>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card"
+                        style="max-width: 400px;  border: 2px solid black;">
+
+                        <div class="card-body" style="align-items: center;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 2:</u></h5>
+                            </div>
+
+                            <label for="SCH2_CONTROL_STRATEGY">Control Strategy: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_CONTROL_STRATEGY" id='SCH2_CONTROL_STRATEGY' ngModel><br>
+
+                            <label for="SCH2_START_DATE">Start Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_START_DATE" id='SCH2_START_DATE' ngModel><br>
+
+                            <label for="SCH2_END_DATE">End Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_END_DATE" id='SCH2_END_DATE' ngModel><br>
+
+                            <label for="SCH2_TIME_ON">Time setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCH2_TIME_ON"
+                                id='SCH2_TIME_ON' ngModel><br>
+
+                            <label for="SCH2_TIME_OFF">Time setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_TIME_OFF" id='SCH2_TIME_OFF' ngModel><br>
+
+                            <label for="SCH2_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_LOW_VOLTAGE_SETPOINT" id='SCH2_LOW_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH2_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_HIGH_VOLTAGE_SETPOINT" id='SCH2_HIGH_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH2_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_TEMP_SETPOINT_ON" id='SCH2_TEMP_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH2_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_TEMP_SETPOINT_OFF" id='SCH2_TEMP_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH2_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_KVAR_SETPOINT_ON" id='SCH2_KVAR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH2_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_KVAR_SETPOINT_OFF" id='SCH2_KVAR_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH2_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_CUR_SETPOINT_ON" id='SCH2_CUR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH2_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_CUR_SETPOINT_OFF" id='SCH2_CUR_SETPOINT_OFF' ngModel><br>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--4 Season-->
+
+            <div
+                *ngIf="capacitor?.CONTROL_TYPE=='VARCOM 1600' || capacitor?.CONTROL_TYPE=='BRE 1600' || capacitor?.CONTROL_TYPE=='IntelliCap Plus' || capacitor?.CONTROL_TYPE=='INTELLICAP PLUS' || capacitor?.CONTROL_TYPE=='IntelliCap 2000'">
+                <div class="card-deck" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+                    <div class="card"
+                        style="max-width: auto; border: 2px solid black;">
+
+                        <div class="card-body" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 1:</u></h5>
+                            </div>
+                            <label for="SCH1_CONTROL_STRATEGY">Control Strategy: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_CONTROL_STRATEGY" id='SCH1_CONTROL_STRATEGY' ngModel><br>
+
+                            <label for="SCH1_START_DATE">Start Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_START_DATE" id='SCH1_START_DATE' ngModel><br>
+
+                            <label for="SCH1_END_DATE">End Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_END_DATE" id='SCH1_END_DATE' ngModel><br>
+
+                            <label for="SCH1_TIME_ON">Time setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCH1_TIME_ON"
+                                id='SCH1_TIME_ON' ngModel><br>
+
+                            <label for="SCH1_TIME_OFF">Time setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_TIME_OFF" id='SCH1_TIME_OFF' ngModel><br>
+
+                            <label for="SCH1_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_LOW_VOLTAGE_SETPOINT" id='SCH1_LOW_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH1_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_HIGH_VOLTAGE_SETPOINT" id='SCH1_HIGH_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH1_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_TEMP_SETPOINT_ON" id='SCH1_TEMP_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH1_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_TEMP_SETPOINT_OFF" id='SCH1_TEMP_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH1_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_KVAR_SETPOINT_ON" id='SCH1_KVAR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH1_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_KVAR_SETPOINT_OFF" id='SCH1_KVAR_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH1_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_CUR_SETPOINT_ON" id='SCH1_CUR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH1_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH1_CUR_SETPOINT_OFF" id='SCH1_CUR_SETPOINT_OFF' ngModel><br>
+                        </div>
+                    </div>
+
+
+                    <div class="card"
+                        style="max-width: auto; border: 2px solid black;">
+
+                        <div class="card-body"style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 2:</u></h5>
+                            </div>
+
+                            <label for="SCH2_CONTROL_STRATEGY">Control Strategy: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_CONTROL_STRATEGY" id='SCH2_CONTROL_STRATEGY' ngModel><br>
+
+                            <label for="SCH2_START_DATE">Start Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_START_DATE" id='SCH2_START_DATE' ngModel><br>
+
+                            <label for="SCH2_END_DATE">End Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_END_DATE" id='SCH2_END_DATE' ngModel><br>
+
+                            <label for="SCH2_TIME_ON">Time setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCH2_TIME_ON"
+                                id='SCH2_TIME_ON' ngModel><br>
+
+                            <label for="SCH2_TIME_OFF">Time setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_TIME_OFF" id='SCH2_TIME_OFF' ngModel><br>
+
+                            <label for="SCH2_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_LOW_VOLTAGE_SETPOINT" id='SCH2_LOW_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH2_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_HIGH_VOLTAGE_SETPOINT" id='SCH2_HIGH_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH2_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_TEMP_SETPOINT_ON" id='SCH2_TEMP_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH2_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_TEMP_SETPOINT_OFF" id='SCH2_TEMP_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH2_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_KVAR_SETPOINT_ON" id='SCH2_KVAR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH2_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_KVAR_SETPOINT_OFF" id='SCH2_KVAR_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH2_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_CUR_SETPOINT_ON" id='SCH2_CUR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH2_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH2_CUR_SETPOINT_OFF" id='SCH2_CUR_SETPOINT_OFF' ngModel><br>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card"
+                        style="max-width: auto;border: 2px solid black;">
+
+                        <div class="card-body"style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 3:</u></h5>
+                            </div>
+
+                            <label for="SCH3_CONTROL_STRATEGY">Control Strategy: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_CONTROL_STRATEGY" id='SCH3_CONTROL_STRATEGY' ngModel><br>
+
+                            <label for="SCH3_START_DATE">Start Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_START_DATE" id='SCH3_START_DATE' ngModel><br>
+
+                            <label for="SCH3_END_DATE">End Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_END_DATE" id='SCH3_END_DATE' ngModel><br>
+
+                            <label for="SCH3_TIME_ON">Time setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCH3_TIME_ON"
+                                id='SCH3_TIME_ON' ngModel><br>
+
+                            <label for="SCH3_TIME_OFF">Time setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_TIME_OFF" id='SCH3_TIME_OFF' ngModel><br>
+
+                            <label for="SCH3_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_LOW_VOLTAGE_SETPOINT" id='SCH3_LOW_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH3_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_HIGH_VOLTAGE_SETPOINT" id='SCH3_HIGH_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH3_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_TEMP_SETPOINT_ON" id='SCH3_TEMP_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH3_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_TEMP_SETPOINT_OFF" id='SCH3_TEMP_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH3_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_KVAR_SETPOINT_ON" id='SCH3_KVAR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH3_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_KVAR_SETPOINT_OFF" id='SCH3_KVAR_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH3_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_CUR_SETPOINT_ON" id='SCH3_CUR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH3_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH3_CUR_SETPOINT_OFF" id='SCH3_CUR_SETPOINT_OFF' ngModel><br>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card"
+                        style="max-width: auto; border: 2px solid black;">
+
+                        <div class="card-body"style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+                            <div class="title">
+                                <h5><u>Season 4:</u></h5>
+                            </div>
+                            <label for="SCH4_CONTROL_STRATEGY">Control Strategy: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_CONTROL_STRATEGY" id='SCH4_CONTROL_STRATEGY' ngModel><br>
+
+                            <label for="SCH4_START_DATE">Start Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_START_DATE" id='SCH4_START_DATE' ngModel><br>
+
+                            <label for="SCH4_END_DATE">End Date: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_END_DATE" id='SCH4_END_DATE' ngModel><br>
+
+                            <label for="SCH4_TIME_ON">Time setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext" [value]="capacitor?.SCH4_TIME_ON"
+                                id='SCH4_TIME_ON' ngModel><br>
+
+                            <label for="SCH4_TIME_OFF">Time setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_TIME_OFF" id='SCH4_TIME_OFF' ngModel><br>
+
+                            <label for="SCH4_LOW_VOLTAGE_SETPOINT">Low voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_LOW_VOLTAGE_SETPOINT" id='SCH4_LOW_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH4_HIGH_VOLTAGE_SETPOINT">High voltage setpoint: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_HIGH_VOLTAGE_SETPOINT" id='SCH4_HIGH_VOLTAGE_SETPOINT'
+                                ngModel><br>
+
+                            <label for="SCH4_TEMP_SETPOINT_ON">Temp. setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_TEMP_SETPOINT_ON" id='SCH4_TEMP_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH4_TEMP_SETPOINT_OFF">Temp. setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_TEMP_SETPOINT_OFF" id='SCH4_TEMP_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH4_KVAR_SETPOINT_ON">KVAR setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_KVAR_SETPOINT_ON" id='SCH4_KVAR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH4_KVAR_SETPOINT_OFF">KVAR setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_KVAR_SETPOINT_OFF" id='SCH4_KVAR_SETPOINT_OFF' ngModel><br>
+
+                            <label for="SCH4_CUR_SETPOINT_ON">Curr setpoint on: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_CUR_SETPOINT_ON" id='SCH4_CUR_SETPOINT_ON' ngModel><br>
+
+                            <label for="SCH4_CUR_SETPOINT_OFF">Curr setpoint off: </label>
+                            <input type="text" readonly class="form-control-plaintext"
+                                [value]="capacitor?.SCH4_CUR_SETPOINT_OFF" id='SCH4_CUR_SETPOINT_OFF' ngModel><br>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</form>
+

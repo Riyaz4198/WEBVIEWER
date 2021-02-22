@@ -1,0 +1,143 @@
+
+
+<form class = 'card p-2 bg-light'>
+  <div class="container-fluid" style="border:4px solid #cecece;" >
+   
+    
+    <div class="header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png" alt="logo">
+      <h3>Settings</h3>
+    </div>
+    
+      
+  <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+  
+    <div class="card-header">
+      <div class="title">
+        <h5><u>Device information</u></h5>
+      </div>
+    </div>
+    <!--- Operating Number --->
+  <div class="container-small">
+     
+
+            <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+            <input type="text" readonly class="form-control-plaintext" [value]="switch?.OPERATINGNUMBER"
+              id = 'OPERATINGNUMBER' ngModel> 
+  </div>
+  <div class="container-small">
+              <label for="DIVISION" class="col-sm-2 col-form-label">Division: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="switch?.DIVISION"
+                id = 'DIVISION' ngModel> 
+              </div>
+              <div class="container-small">
+                <label for="FEEDERNAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="switch?.FEEDER_NAME"
+                id = 'FEEDERNAME' ngModel> 
+     
+              </div>
+
+                  <div class="container-small">
+      <label for="LOCATION" class="col-sm-2 col-form-label" >Location: </label>
+      <input type="text2" style="width: 900px;" readonly class="form-control-plaintext" [value]="switch?.LOCATION"
+        id = 'LOCATION' ngModel> 
+      </div>
+
+<div class="container-small">
+<label for="devicetype" class="col-sm-2 col-form-label"> Device Type:</label>
+<input type="text" readonly class="form-control-plaintext" [value]="switch?.DEVICE_TYPE"
+  id='inputdevtype' readonly
+  ngModel>
+ <div>
+   <div class="container-small">
+  <label for="controlunit" class="col-sm-2 col-form-label"> Control Unit Type:</label>
+  <input type="text" readonly class="form-control-plaintext" [value]="switch?.CONTROL_TYPE"
+    id='inputdevtype' readonly
+    ngModel>
+  </div>
+    <label for="atsenabled" class="col-sm-2 col-form-label">  ATS Enabled:</label>
+    <input type="text" readonly class="form-control-plaintext" [value]="switch?.ATS_ENABLED"
+      id='atsenabled' readonly
+      ngModel>
+</div>
+<div class="container-small">
+      <label for="filmvareversion" class="col-sm-2 col-form-label">  Filmvare Version:</label>
+      <input type="text" readonly class="form-control-plaintext" [value]="switch?.FIRMWARE_VERSION"
+        id='filmvareversion' readonly
+        ngModel>
+      </div>
+      <div class="container-small">
+        <label for="sectionalizermode" class="col-sm-2 col-form-label">  Sectionalizer Mode Enabled:</label>
+        <input type="text" readonly class="form-control-plaintext" [value]="switch?.SECT_MODE_ENABLED"
+          id='sectionalizermode' readonly
+          ngModel>
+</div>
+<div>
+          <label for="FLISRdevice" class="col-sm-2 col-form-label">  FLISR Device::</label>
+          <input type="text" readonly class="form-control-plaintext" [value]="switch?.FLISR"
+            id='FLISRdevice' readonly
+            ngModel>
+<br>
+            <label for="SCADA" class="col-sm-2 col-form-label">  SCADA:</label>
+            <input type="text" readonly class="form-control-plaintext" [value]="switch?.SCADA"
+              id='scada' readonly
+              ngModel>
+</div>
+<div>
+  
+              <label for="summerloadlimit" class="col-sm-2 col-form-label">  Summer Load Limit(amps) :</label>
+              <input type="text" readonly class="form-control-plaintext" [value]="switch?.SUMMER_LOAD_LIMIT"
+                id='summerloadlimit' readonly
+                ngModel>
+</div>
+<div>
+  
+                <label for="winterloadlimit" class="col-sm-2 col-form-label">  Winter Load Limit(amps) :</label>
+                <input type="text" readonly class="form-control-plaintext" [value]="switch?.WINTER_LOAD_LIMIT"
+                  id='winterloadlimit' readonly
+                  ngModel>
+                  
+</div>
+<div>
+  <div>
+    <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+    <div class="container-xl" style="border: 1px solid grey;background-color:white;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+    <textarea readonly class="form-control-plaintext" [value]="switch?.ENGINEERING_COMMENTS"
+    id = 'ENGINEERING_COMMENTS' ngModel> 
+    </textarea>
+  </div>
+  </div>
+</div>
+  <br>
+  <br>
+</div>
+</div>
+<div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+                    <div class="title">
+                      <h5><u>Settings information</u></h5>
+                    </div>     
+        
+        <div class="container-small">
+
+          <label for="faultcurrphase" class="col-sm-6 col-form-label">  Fault Curr Level (Phase) :</label>
+                  <input type="text" readonly class="form-control-plaintext" [value]="switch?.PHA_FAULT_CUR_LEVEL"
+                    id='faultcurrphase' readonly
+                    ngModel>
+</div>
+<div class="container-small">
+                    <label for="faultcurrground" class="col-sm-6 col-form-label"> Fault Curr Level (Ground): </label>
+                  <input type="text" readonly class="form-control-plaintext" [value]="switch?.GRD_FAULT_CUR_LEVEL"
+                    id='faultcurrground' readonly
+                    ngModel>
+
+</div>
+<div class="container-small">
+                    <label for="reclosecount" class="col-sm-6 col-form-label">  Reclose Count to Trip:</label>
+                  <input type="text" readonly class="form-control-plaintext" [value]="switch?.COUNTS_TO_LOCKOUT"
+                    id='reclosecount' readonly
+                    ngModel>
+                    </div>
+                
+                    </div>
+                  </div>
+                  </form>

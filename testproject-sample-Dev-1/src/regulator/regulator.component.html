@@ -1,0 +1,383 @@
+
+
+<form class = 'card p-2 bg-light'>
+    <div class="container-fluid" style="border:4px solid #cecece;" >
+     
+      
+      <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pacific_Gas_and_Electric_Company_%28logo%29.svg/800px-Pacific_Gas_and_Electric_Company_%28logo%29.svg.png" alt="logo">
+        <h3>Settings</h3>
+      </div>
+      
+
+
+      <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185); ">
+
+          <div class="card-header">
+              <div class="title">
+                  <h5><u>Device information</u></h5>
+              </div>
+          </div>
+
+
+
+          <!--- Operating Number --->
+
+          <div class="container">
+
+
+
+              <label for="OPERATINGNUMBER" class="col-sm-2 col-form-label">Operating #: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.OPERATINGNUMBER"
+                  id='OPERATINGNUMBER' ngModel>
+              <label for="DIVISION" class="col-sm-2 col-form-label">Division: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.DIVISION" id='DIVISION'
+                  ngModel>
+              <label for="FEEDERNAME" class="col-sm-2 col-form-label">Feeder Name: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.FEEDERNAME"
+                  id='FEEDERNAME' ngModel>
+              <label for="LOCATION" class="col-sm-2 col-form-label">Location: </label>
+              <input type="text" style=width:47.5%; readonly class="form-control-plaintext" [value]="regulator?.LOCATION" id='LOCATION'
+                  ngModel>
+
+              <br>
+              <label for="DEVICE_TYPE" class="col-sm-2 col-form-label">Device Type: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.DEVICE_TYPE"
+                  id='DEVICE_TYPE' ngModel>
+              <label for="NORMAL_OPERATING_MODE" class="col-sm-2 col-form-label">Operating Mode: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.NORMAL_OPERATING_MODE"
+                  id='NORMAL_OPERATING_MODE' ngModel>
+              <br>
+
+              <label for="SCADA" class="col-sm-2 col-form-label">SCADA: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.SCADA" id='SCADA'
+                  ngModel>
+              <br>
+              <label for="PRIMAY_CT_RATING" class="col-sm-2 col-form-label">Primary CT Rating: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.PRIMAY_CT_RATING"
+                  id='PRIMAY_CT_RATING' ngModel>
+
+              <br>
+          </div>
+
+          <div>
+              <label for="ENGINEERING_COMMENTS" class="col-sm-2 control-label">Engineering Comments: </label>
+              <div class="container-xl"
+                  style="border: 1px solid grey;background:white;margin-right:-35px;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+                  <textarea readonly class="form-control-plaintext" [value]="regulator?.ENGINEERING_COMMENTS"
+                      id='ENGINEERING_COMMENTS' ngModel>
+    </textarea>
+
+              </div>
+
+              <br>
+              <br>
+          </div>
+
+          <div>
+              <label for="BYPASS_PLAN" class="col-sm-2 control-label"> Bypass Plan: </label>
+              <div class="container-xl"
+                  style="border: 1px solid grey;background:white;margin-right:-35px;margin-bottom:-25px;width:900px;height:70px;line-height:5em;overflow:scroll;padding:4px;">
+                  <textarea readonly class="form-control-plaintext" [value]="regulator?.BYPASS_PLAN" id='BYPASS_PLAN'
+                      ngModel>
+    </textarea>
+
+              </div>
+
+              <br>
+              <br>
+          </div>
+
+      </div>
+
+      <div class="card border-dark mb-3" style="max-width: auto;background-color:rgba(128, 126, 126, 0.185);">
+
+          <div class="title">
+              <h5><u>Settings information</u></h5>
+          </div>
+
+
+
+          <div class="container">
+              <label for="HIGH_VOLT_BLOCK" class="col-sm-2 col-form-label">High Voltage Limit: </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.HIGH_VOLT_BLOCK"
+                  id='HIGH_VOLT_BLOCK' ngModel>
+              <label for="REVERSIBLE_THRESHOLD" class="col-sm-2 col-form-label">Reversible Threshold:</label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.REVERSIBLE_THRESHOLD"
+                  id='REVERSIBLE_THRESHOLD' ngModel>
+              <label for="EFFECTIVE_BLOCK_PCT" class="col-sm-2 col-form-label">Effective Block %:</label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.EFFECTIVE_BLOCK_PCT"
+                  id='EFFECTIVE_BLOCK_PCT' ngModel>
+          </div>
+          <div class="container">
+              <label for="LOW_VOLT_BLOCK" class="col-sm-2 control-label">Low Voltage Limit : </label>
+              <input type="text" readonly class="form-control-plaintext" [value]="regulator?.LOW_VOLT_BLOCK"
+                  id='LOW_VOLT_BLOCK' ngModel>
+          </div>
+
+
+          <br>
+          <br>
+
+
+          <div class="card-deck" style="max-width: auto;">
+              <div class="card" style="max-width: auto;border: 2px solid black; ">
+
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                      <div class="container">
+                          <div class="title">
+                              <h5><u>Unit 1</u></h5>
+                          </div>
+
+                          <br>
+                          <label for="CONTROL_TYPE" class="col col-form-label">Control Type:</label>
+                          <input type="text" readonly class="form-control-plaintext" [value]="regulator?.CONTROL_TYPE"
+                              id='CONTROL_TYPE' ngModel>
+
+                          <br>
+
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+
+
+              <div class="card" style="max-width: auto; border: 2px solid black;">
+
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                      <div class="container">
+                          <div class="title">
+                              <h5><u>Unit 2</u></h5>
+                          </div>
+
+                          <br>
+                          <label for="CONTROL_TYPE" class="col col-form-label">Control Type:</label>
+                          <input type="text" readonly class="form-control-plaintext" [value]="regulator?.CONTROL_TYPE"
+                              id='CONTROL_TYPE' ngModel>
+
+                          <br>
+
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <div class="card" style="max-width: auto; border: 2px solid black;">
+
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                      <div class="container">
+                          <div class="title">
+                              <h5><u>Unit 3</u></h5>
+                          </div>
+
+                          <br>
+                          <label for="CONTROL_TYPE" class="col col-form-label">Control Type:</label>
+                          <input type="text" readonly class="form-control-plaintext" [value]="regulator?.CONTROL_TYPE"
+                              id='CONTROL_TYPE' ngModel>
+
+                          <br>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+<br>
+<br>
+
+          <div class="card-deck" style="max-width: auto;">
+              <div class="card" style="max-width: auto; border: 2px solid black;">
+
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                      <div class="container">
+                          <div class="title">
+                              <h5><u>Forward</u></h5>
+                          </div>
+
+                          <br>
+                          <table class="table table-sm" >
+                              <thead>
+                                  <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Voltage(120V)</th>
+                                      <th scope="col">Rset(volt)</th>
+                                      <th scope="col">Xset(volt)</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <th scope="row">A</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_BASE_VOLTS" id='FWD_BASE_VOLTS' readonly
+                                              ngModel>
+                                      </td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_LDC_R" id='FWD_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_LDC_X" id='FWD_LDC_X' readonly ngModel></td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row">B</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_BASE_VOLTS" id='FWD_BASE_VOLTS' readonly
+                                              ngModel>
+                                      </td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_LDC_R" id='FWD_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_LDC_X" id='FWD_LDC_X' readonly ngModel></td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row">C</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_BASE_VOLTS" id='FWD_BASE_VOLTS' readonly
+                                              ngModel>
+                                      </td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_LDC_R" id='FWD_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.FWD_LDC_X" id='FWD_LDC_X' readonly ngModel></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+
+
+                          <br>
+
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+
+
+              <div class="card" style="max-width: auto; border: 2px solid black;">
+
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                      <div class="container">
+                          <div class="title">
+                              <h5><u>Reverse</u></h5>
+                          </div>
+
+                          <br>
+                          <table class="table table-sm" >
+                              <thead>
+                                  <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Voltage(120V)</th>
+                                      <th scope="col">Rset(volt)</th>
+                                      <th scope="col">Xset(volt)</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <th scope="row">A</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_BASE_VOLTS" id='REV_BASE_VOLTS' readonly
+                                              ngModel>
+                                      </td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_LDC_R" id='REV_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_LDC_X" id='REV_LDC_X' readonly ngModel></td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row">B</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_BASE_VOLTS" id='REV_BASE_VOLTS' readonly
+                                              ngModel>
+                                      </td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_LDC_R" id='REV_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_LDC_X" id='REV_LDC_X' readonly ngModel></td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row">C</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_BASE_VOLTS" id='REV_BASE_VOLTS' readonly
+                                              ngModel>
+                                      </td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_LDC_R" id='REV_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.REV_LDC_X" id='REV_LDC_X' readonly ngModel></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+
+                          <br>
+
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <div class="card" style="max-width: auto;border: 2px solid black;">
+                <div class="card-body" style="background-color:rgba(128, 126, 126, 0.185);">
+                      <div class="container">
+                          <div class="title">
+                              <h5><u>Distributed Generation</u></h5>
+                          </div>
+
+                          <br>
+                          <table class="table table-sm" >
+                              <thead>
+                                  <tr>
+                                      <th scope="col"></th>
+
+                                      <th scope="col">Rset(volt)</th>
+                                      <th scope="col">Xset(volt)</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <th scope="row">A</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.DG_LDC_R" id='DG_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.DG_LDC_X" id='DG_LDC_X' readonly ngModel></td>
+
+                                  </tr>
+                                  <tr>
+                                      <th scope="row">B</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.DG_LDC_R" id='DG_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.DG_LDC_X" id='DG_LDC_X' readonly ngModel></td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row">C</th>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.DG_LDC_R" id='DG_LDC_R' readonly ngModel></td>
+                                      <td><input type="text1" readonly class="form-control-plaintext"
+                                              [value]="regulator?.DG_LDC_X" id='DG_LDC_X' readonly ngModel></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+
+                          <br>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+</form>
+
